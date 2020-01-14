@@ -4,14 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Vue</title>
+  <title>Currency Converter</title>
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
   <link rel="stylesheet" href="./css/styles.css">
   <script src="./js/bundle.js"></script>
 </head>
 <body>
   <div id="app">
-    
+    <h1>Euro currency converter</h1>
+    <label for="amount-to-convert">Euros:</label>
+    <input type="number" name="amount-to-convert" v-model="amountToConvert">
+
+    <label for="select-currency">Select conversion currency:</label>
+    <select name="select-currency" v-model="rateSelected">
+      <option v-for="(rate, name) in currencyRateInfo.rates" :value="rate">
+        {{name}}
+      </option>
+    </select>
   </div>
 </body>
 </html>
