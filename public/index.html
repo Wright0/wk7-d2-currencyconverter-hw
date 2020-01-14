@@ -13,7 +13,7 @@
   <div id="app">
     <h1>Euro currency converter</h1>
     <label for="amount-to-convert">Euros:</label>
-    <input type="number" name="amount-to-convert" v-model="amountToConvert">
+    <input type="number" name="amount-to-convert" v-model.number="amountToConvert">
 
     <label for="select-currency">Select conversion currency:</label>
     <select name="select-currency" v-model="rateSelected">
@@ -21,6 +21,8 @@
         {{name}}
       </option>
     </select>
+
+    <div> <p>{{ convertedAmount }}</p> </div>
   </div>
 </body>
 </html>

@@ -12,6 +12,12 @@ document.addEventListener('DOMContentLoaded', () => {
       this.fetchRates();
     },
 
+    computed:{
+      convertedAmount(){
+        return this.amountToConvert * this.rateSelected;
+      }
+    },
+
     methods: {
       fetchRates: function(){
         fetch('https://api.exchangeratesapi.io/latest')
