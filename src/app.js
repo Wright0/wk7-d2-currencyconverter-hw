@@ -14,7 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     computed:{
       convertedAmount(){
-        return this.amountToConvert * this.rateSelected;
+        let convertedAmount = this.amountToConvert * this.rateSelected;
+        return convertedAmount.toFixed(2);
       }
     },
 
