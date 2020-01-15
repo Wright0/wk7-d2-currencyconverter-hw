@@ -17,12 +17,12 @@
 
     <label for="select-currency">Select conversion currency:</label>
     <select name="select-currency" v-model="rateSelected">
-      <option v-for="(rate, name) in currencyRateInfo.rates" :value="rate">
+      <option v-for="(rate, name) in currencyRates" :value="rate">
         {{name}}
       </option>
     </select>
 
-    <div> <p>{{ convertedAmount }}</p> </div>
+    <div v-if="rateSelected"> <p>{{ convertedAmount}} {{rateSelected.name}}</p> </div>
   </div>
 </body>
 </html>
